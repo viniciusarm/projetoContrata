@@ -76,6 +76,7 @@ await db.execute('''
 ''');
 
 
+
 }//fim do método de criação do banco de dados.
 
 Future _onUpdate (Database db, int version) async{
