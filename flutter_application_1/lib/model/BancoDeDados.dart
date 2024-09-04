@@ -34,7 +34,7 @@ return _database!; //retorna o banco de dados iniciado.
 
 Future<Database> _initDatabase()async{
   //obter o caminho do diretório do banco de dados
-  String path = join (await getDatabasesPath(),'Register.database.db');
+  String path = join (await getDatabasesPath(),'Provider.database.db');
   //user_databse.db é o nome do banco de dados.
   //abre o banco de dados, e caso ele nã oexista, o método cria o BD.
   return openDatabase(path, /*Procura ver se já existe ou não através do
@@ -49,13 +49,13 @@ onCreate: _onCreate, //método chama acriação do banco de dados.
 
 // metodo de criação do banco de dados.
 Future _onCreate(Database db, int version) async {
-// 
+
 await db.execute('''
   CREATE TABLE Usuario (
     id INTERGER PRIMARY KEY AUTOINCREMENT ,
     nome: Varchar (30),
     email: Varchar (30),
-    password: Varhar (20),
+    password: Varchar (20),
 ''');
 
 await db.execute('''
@@ -71,7 +71,7 @@ await db.execute('''
     id INTERGER PRIMARY KEY AUTOINCREMENT ,
     nome varchar (30),
     telefone varchar (14),
-    especialidade varcahr (30)
+    especialidade varchar (30)
 
 ''');
 

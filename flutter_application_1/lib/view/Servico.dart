@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/view/prestadordeServico.dart';
-import 'package:flutter_application_1/view/registerPrestador';
+import 'package:flutter_application_1/view/registerPrestador.dart';
 
 class ServicesView extends StatelessWidget {
   final List<ServiceItem> services = [
