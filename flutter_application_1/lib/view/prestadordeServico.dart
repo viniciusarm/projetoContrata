@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/view/perfilPrestador.dart';
-import '../model/perfilPrestador.dart';
+import '../model/modelPrestador.dart';
 
 class ServiceProvidersView extends StatelessWidget {
   final String serviceName;

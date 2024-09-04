@@ -51,38 +51,31 @@ onCreate: _onCreate, //método chama acriação do banco de dados.
 Future _onCreate(Database db, int version) async {
 // 
 await db.execute('''
-  CREATE TABLE Register (
+  CREATE TABLE Usuario (
     id INTERGER PRIMARY KEY AUTOINCREMENT ,
     nome: Varchar (30),
     email: Varchar (30),
     password: Varhar (20),
-    endereco: Varchar (50),
-    telefone: Varchar (14),
-    
-''');
+
+
 await db.execute('''
-  CREATE TABLE Profissao (
+  CREATE TABLE Comment (
     id INTERGER PRIMARY KEY AUTOINCREMENT ,
-    nome TEXT NOT NULL,
-    
-''');
-await db.execute('''
-  CREATE TABLE prestador (
-    id INTERGER PRIMARY KEY AUTOINCREMENT ,
-    idprofissao INTEGER NOT NULL,
-    idregister INTEGER NOT NULL,
-    FOREIGN KEY (idprofissao) REFERENCES profissao(id),
-    FOREIGN KEY (idregister) REFERENCES register(id)
-    
+    feedback TEXT,
+    rating int,
+    id
 ''');
 
 await db.execute('''
-  CREATE TABLE  (
-  id INTERGER PRIMARY KEY AUTOINCREMENT.
-  user
+  CREATE TABLE Provider (
+    id INTERGER PRIMARY KEY AUTOINCREMENT ,
+    nome varchar (30),
+    telefone varchar (14),
+    especialidade varcahr (30)
 
-  );
 ''');
+
+
 
 }//fim do método de criação do banco de dados.
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../model/perfilPrestador.dart';
+import 'package:flutter_application_1/model/avaliacoes.dart';
+import '../model/modelPrestador.dart';
 
 class ProviderDetailsView extends StatefulWidget {
   final Provider provider;
