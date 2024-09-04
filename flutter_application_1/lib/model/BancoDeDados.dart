@@ -56,7 +56,7 @@ await db.execute('''
     nome: Varchar (30),
     email: Varchar (30),
     password: Varhar (20),
-''');
+
 
 await db.execute('''
   CREATE TABLE Comment (
@@ -74,6 +74,7 @@ await db.execute('''
     especialidade varcahr (30)
 
 ''');
+
 
 
 }//fim do método de criação do banco de dados.
