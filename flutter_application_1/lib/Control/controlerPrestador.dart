@@ -1,4 +1,4 @@
-//classe para listar, caastrar e atualizar usuarios
+//classe para listar, caastrar e atualizar Prestadores
 
 import 'package:flutter_application_1/model/BancoDeDados.dart';
 import 'package:flutter_application_1/model/modelPrestador.dart';
