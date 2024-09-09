@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Control/controlerAvaliacao.dart';
 import 'package:flutter_application_1/model/avaliacoes.dart';
 import '../model/modelPrestador.dart';
 
 class ProviderDetailsView extends StatefulWidget {
   final Provider provider;
-
-  ProviderDetailsView({required this.provider});
+  final int idUsuario;
+  ProviderDetailsView({required this.provider,required this.idUsuario});
 
   @override
   _ProviderDetailsViewState createState() => _ProviderDetailsViewState();
@@ -15,14 +16,13 @@ class _ProviderDetailsViewState extends State<ProviderDetailsView> {
   final _commentController = TextEditingController();
   double _rating = 0;
 
-  void _addComment() {
+ /* void _addComment() {
     if (_commentController.text.isNotEmpty) {
       setState(() {
-        widget.provider.comments.add(
-          Comment(
-            user:
-                'Cliente Anônimo', // Ajuste para capturar o nome do usuário, se necessário
-            text: _commentController.text,
+        widget.provider.avaliar.add(
+          Avaliacao(
+            
+            texto: _commentController.text,
             rating: _rating,
           ),
         );
@@ -33,6 +33,26 @@ class _ProviderDetailsViewState extends State<ProviderDetailsView> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Comentário adicionado com sucesso!')),
       );
+    }
+  }*/
+
+// criando o metodo para salvar uma avaliação no banco de dados
+  void SalvarComentarios()async{
+
+    try{
+        // criando um objeto de controller para acessar os metodos do Avaliação controller
+        AvaliacaoController avaliacaoController = AvaliacaoController();
+        //capturando os dados que o usuario digitou e passando para o model
+        Avaliacao avaliacao = Avaliacao(
+          texto: _commentController.text, 
+          rating: _rating,
+
+          );
+
+
+    }catch(e){
+
+
     }
   }
 
@@ -69,8 +89,8 @@ class _ProviderDetailsViewState extends State<ProviderDetailsView> {
                 itemBuilder: (context, index) {
                   final comment = widget.provider.comments[index];
                   return ListTile(
-                    title: Text(comment.user),
-                    subtitle: Text(comment.text),
+                    
+                    subtitle: Text(comment.texto),
                     trailing: Icon(
                       Icons.star,
                       color: Colors.amber,

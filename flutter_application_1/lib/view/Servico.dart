@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/model/usuario.dart';
 import 'package:flutter_application_1/view/prestadordeServico.dart';
-import 'package:flutter_application_1/view/registerPrestador';
+import 'package:flutter_application_1/view/registerPrestador.dart';
 
 class ServicesView extends StatelessWidget {
+
+// criando um construtor para receber o id do usuário
+final int? idUsuario;
+ServicesView( {
+  
+  required  this.idUsuario,
+
+});
+
+
   final List<ServiceItem> services = [
     ServiceItem('Jardinagem', Icons.grass),
     ServiceItem('Limpeza', Icons.cleaning_services),
@@ -40,7 +51,7 @@ class ServicesView extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) =>
-                        ServiceProvidersView(serviceName: service.name),
+                        ServiceProvidersView(serviceName: service.name, idUsuario: idUsuario),
                   ),
                 );
               },
@@ -53,7 +64,7 @@ class ServicesView extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => ProviderRegisterView()),
+            MaterialPageRoute(builder: (context) => ProviderRegisterView(idUsuario: idUsuario)),
           );
         },
         backgroundColor: Colors.blueGrey,

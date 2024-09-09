@@ -3,9 +3,13 @@ import 'package:flutter_application_1/view/perfilPrestador.dart';
 import '../model/modelPrestador.dart';
 
 class ServiceProvidersView extends StatelessWidget {
-  final String serviceName;
 
-  ServiceProvidersView({required this.serviceName});
+// criando o cosntrutor para receber o id do usuario logado
+  final String serviceName;
+  final int idUsuario;
+
+
+  ServiceProvidersView({required this.serviceName, required this.idUsuario});
 
   // Exemplo de lista de prestadores com comentários
   final Map<String, List<Provider>> providers = {
@@ -48,7 +52,7 @@ class ServiceProvidersView extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            ProviderDetailsView(provider: provider),
+                            ProviderDetailsView(provider: provider, idUsuario: idUsuario),
                       ),
                     );
                   },
