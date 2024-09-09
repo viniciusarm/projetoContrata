@@ -45,7 +45,7 @@ return await db.update('Provider', prestador.toMap(),where: 'idProvider=?',where
 }//fim do método editRegistro
 
 //Método de listar Registro
-Future<List<Provider>> getRegister(dynamic listadeprestador) async{
+Future<List<Provider>> getPrestador(dynamic listadeprestador) async{
   //criar variável para receber a lista dos usuários do banco de dados.
   /* Variável do tipo lista, que recebe uma Map de Strings dinamicas 
   que recebe todos os dados da tabela usuário do banco de dados*/

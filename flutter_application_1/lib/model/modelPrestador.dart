@@ -6,14 +6,14 @@ class Provider {
   final String name;
   final String phone;
   final String specialty;
-  final List<Comment> comments;
+
 
   Provider({
     this.idProvider,
     required this.name,
     required this.phone,
     required this.specialty,
-    this.comments = const [],
+  
   });
 
   // Método para converter um Provider em Map
@@ -23,7 +23,7 @@ class Provider {
       'name': name,
       'phone': phone,
       'specialty': specialty,
-      'comments': comments.map((comment) => comment.toMap()).toList(),
+      
     };
   }
 
@@ -34,9 +34,7 @@ class Provider {
       name: map['name'],
       phone: map['phone'],
       specialty: map['specialty'],
-      comments: List<Comment>.from(
-        map['comments']?.map((item) => Comment.fromMap(item)) ?? [],
-      ),
+     
     );
   }
 }
