@@ -1,6 +1,7 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
+
 class Bancodedados {
   static final Bancodedados _instancia = Bancodedados._internal();
 
@@ -66,3 +67,4 @@ class Bancodedados {
     // Atualize o banco de dados se necessário (opcional)
   }
 }
+

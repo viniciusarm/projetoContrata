@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ProviderRegisterView extends StatefulWidget {
+
   final int idUsuario;
   ProviderRegisterView({required this.idUsuario});
+
 
   @override
   _ProviderRegisterViewState createState() => _ProviderRegisterViewState();
