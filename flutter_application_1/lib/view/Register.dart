@@ -7,6 +7,7 @@ class RegisterView extends StatelessWidget {
   final TextEditingController _nomeController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _senhaController = TextEditingController();
+  
 
   // Cria um método para salvar o cadastro
   void salvarcadastro(BuildContext context) async {
@@ -18,7 +19,7 @@ class RegisterView extends StatelessWidget {
       Usuario usuario = Usuario(
         nome: _nomeController.text,
         email: _emailController.text,
-        senha: _senhaController.text,
+        password: _senhaController.text,
       );
 
       // Salvar usuário
@@ -31,6 +32,7 @@ class RegisterView extends StatelessWidget {
           backgroundColor: Colors.green,
           duration: Duration(seconds: 5),
         ),
+        
       );
               Navigator.push(
                     context,

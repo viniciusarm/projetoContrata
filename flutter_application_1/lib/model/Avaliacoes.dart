@@ -1,6 +1,6 @@
 class Avaliacao {
 
-  int? idAvaliacao;
+   int? idAvaliacao;
   final String text;
   final double rating;
   int? idUser;

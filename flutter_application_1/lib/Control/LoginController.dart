@@ -1,7 +1,6 @@
 //import 'package:flutter/services.dart.dart';
 import 'package:flutter_application_1/model/BancodeDados.dart';
 import 'package:flutter_application_1/model/usuario.dart';
-import 'package:sqflite/sqflite.dart';
 
 class Logincontroler {
   //chamando o banco de dados

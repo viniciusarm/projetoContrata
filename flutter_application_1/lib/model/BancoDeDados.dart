@@ -32,7 +32,7 @@ class Bancodedados {
     // Criação da tabela Usuario
     await db.execute('''
       CREATE TABLE Usuario (
-        idUser INTEGER PRIMARY KEY AUTOINCREMENT,
+        idUser INTEGER PRIMARY KEY (1),
         nome TEXT,
         email TEXT,
         password TEXT

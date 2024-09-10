@@ -1,15 +1,14 @@
 // provider_model.dart
-import 'package:flutter_application_1/model/avaliacoes.dart';
 
 class Provider {
-  int? idProvider;
+  final int idProvider;
   final String name;
   final String phone;
   final String specialty;
 
 
   Provider({
-    this.idProvider,
+    required this.idProvider,
     required this.name,
     required this.phone,
     required this.specialty,

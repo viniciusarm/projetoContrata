@@ -1,11 +1,11 @@
 class Usuario {
-  final int? idUser;
+    int? idUser ;
   final String nome;
   final String email;
   final String password;
 
   Usuario({
-    this.idUser,
+     this.idUser,
     required this.nome,
     required this.email,
     required this.password,
@@ -13,12 +13,15 @@ class Usuario {
 
   factory Usuario.fromMap(Map<String, dynamic> map) {
     return Usuario(
-      idUser: map['id'],
+      idUser: map['idUser'],
       nome: map['nome'],
       email: map['email'],
       password: map['password'],
     );
   }
+  
+  static get x => null;
+  
 
   Map<String, dynamic> toMap() {
     return {

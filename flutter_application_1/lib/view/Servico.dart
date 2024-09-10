@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/model/usuario.dart';
 import 'package:flutter_application_1/view/prestadordeServico.dart';
 import 'package:flutter_application_1/view/registerPrestador.dart';
 
 class ServicesView extends StatelessWidget {
 
 // criando um construtor para receber o id do usuário
-final int? idUsuario;
+final int idUsuario;
 ServicesView( {
   
   required  this.idUsuario,

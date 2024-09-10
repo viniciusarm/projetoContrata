@@ -14,14 +14,14 @@ class ServiceProvidersView extends StatelessWidget {
   // Exemplo de lista de prestadores com comentários
   final Map<String, List<Provider>> providers = {
     'Jardinagem': [
-      Provider(
+      Provider(idProvider: 1,
           name: 'Carlos Silva', phone: '123456789', specialty: 'Jardinagem'),
-      Provider(
+      Provider(idProvider: 2,
           name: 'Maria Santos', phone: '987654321', specialty: 'Jardinagem'),
     ],
     'Limpeza': [
-      Provider(name: 'Joana Pereira', phone: '111222333', specialty: 'Limpeza'),
-      Provider(
+      Provider(idProvider: 3, name: 'Joana Pereira', phone: '111222333', specialty: 'Limpeza'),
+      Provider( idProvider: 4,
           name: 'Ricardo Oliveira', phone: '444555666', specialty: 'Limpeza'),
     ],
     // Adicione mais prestadores conforme necessário

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Control/controlerAvaliacao.dart';
-import 'package:flutter_application_1/model/avaliacoes.dart';
+import 'package:flutter_application_1/model/Avaliacoes.dart';
+
 import '../model/modelPrestador.dart';
 
 class ProviderDetailsView extends StatefulWidget {
   final Provider provider;
   final int idUsuario;
-  ProviderDetailsView({required this.provider,required this.idUsuario});
+  ProviderDetailsView({required this.provider, required  this.idUsuario});
+  
+  //get idUsuario => idUsuario;
 
   @override
   _ProviderDetailsViewState createState() => _ProviderDetailsViewState();
@@ -15,45 +18,44 @@ class ProviderDetailsView extends StatefulWidget {
 class _ProviderDetailsViewState extends State<ProviderDetailsView> {
   final _commentController = TextEditingController();
   double _rating = 0;
+  final AvaliacaoController avaliacaoController = AvaliacaoController();
+  final List<Avaliacao> _lista =[];
 
- /* void _addComment() {
-    if (_commentController.text.isNotEmpty) {
-      setState(() {
-        widget.provider.avaliar.add(
-          Avaliacao(
-            
-            texto: _commentController.text,
-            rating: _rating,
-          ),
-        );
-      });
+Future <void> listarAvaliacoes()async{
+  final avaliar = await avaliacaoController.listarAvaliacao(widget.provider.idProvider);
+  setState(() {
+    _lista.addAll(avaliar as Iterable<Avaliacao>);
+    _lista.clear();
+  });
 
-      _commentController.clear();
-      _rating = 0;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Comentário adicionado com sucesso!')),
-      );
-    }
-  }*/
+}
 
-// criando o metodo para salvar uma avaliação no banco de dados
-  void SalvarComentarios()async{
 
-    try{
-        // criando um objeto de controller para acessar os metodos do Avaliação controller
-        AvaliacaoController avaliacaoController = AvaliacaoController();
-        //capturando os dados que o usuario digitou e passando para o model
-        Avaliacao avaliacao = Avaliacao(
-          texto: _commentController.text, 
+
+  void _addComment() async{
+   
+     try{
+        Avaliacao avaliacao =Avaliacao(
+          text: _commentController.text,
           rating: _rating,
-
+          idUser: widget.idUsuario,
+          idProvider: widget.provider.idProvider,
           );
 
+          int ava = await avaliacaoController.addComment(avaliacao);
 
-    }catch(e){
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("Avaliação Cadastrada!"))
+          );
+     }catch(e){
 
+              ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Avaliação não cadastrada $e"))
+                  );
+            }
+   
 
-    }
+      
   }
 
   @override
@@ -85,12 +87,12 @@ class _ProviderDetailsViewState extends State<ProviderDetailsView> {
             SizedBox(height: 8),
             Expanded(
               child: ListView.builder(
-                itemCount: widget.provider.comments.length,
+                itemCount: _lista.length,
                 itemBuilder: (context, index) {
-                  final comment = widget.provider.comments[index];
+                  final comment = _lista[index];
                   return ListTile(
-                    
-                    subtitle: Text(comment.texto),
+                    title: Text(comment.rating as String),
+                    subtitle: Text(comment.text),
                     trailing: Icon(
                       Icons.star,
                       color: Colors.amber,

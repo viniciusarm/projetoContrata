@@ -1,16 +1,12 @@
-# flutter_application_1
+ # DOCUMENTAÇÃO DO PROJETO
 
-A new Flutter project.
+ # CONTRATA FÁCIL
 
-## Getting Started
+ ## INTRODUÇÃO
 
-This project is a starting point for a Flutter application.
+ Contrata Fácil se trata de uma aplicação mobile desenvolvida com Flutter, que traz consigo a possibilidade de contratar pequenos serviços, como por exermplo contratar uma diarista sem sequer precisar sair de casa ou na rotina corrida, no pouco tempo que se tem
+não precisar ir atrás de alguém de confiança, pois o aplicativo faz a ponte entre um prestador de serviço confiável e um cliente necessitado. Basta fazer o login e escolher o seu serviço! 
 
-A few resources to get you started if this is your first Flutter project:
+![Saibamais] (flutter_application_1/docs/introducao.md)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
