@@ -53,4 +53,21 @@ Future<List<Avaliacao>> getComment(dynamic listadeAvaliacao) async{
   });
 
 }
+
+// listar as avaliações apenas do prestador de serviço que foi escolhido
+Future<Avaliacao?> listarAvaliacao(int idProvider) async{
+    final db = await bancodados.database;
+
+    // busque no banco de dados as avaliações onde idProvider é igual id do usuário que foi passado
+    final List<Map<String,dynamic>> lista = await db.query(
+      'Avaliacao', where: 'idProvider=?', whereArgs: [idProvider],
+    );
+
+    if(lista.isNotEmpty){
+      return Avaliacao.fromMap(lista.first);
+    }else{
+      return null;
+    }
+
+}
 }
