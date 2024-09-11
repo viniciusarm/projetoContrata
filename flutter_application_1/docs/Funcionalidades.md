@@ -1,8 +1,8 @@
 # FUNCIONALIDADES BÁSICAS 
 
 <!-- Código para por imagens dentro da documentação  -->
-![Diagrama Caso de Uso](docs/SERVIÇO.png)
-![Diagrama Conceitual](docs/Conceitual.png)
+![Diagrama Caso de Uso](/SERVIÇO.png)
+![Diagrama Conceitual](/Conceitual.png)
 
 **Registro de Usuário**
 - Os usuários criam uma conta inoformando nome,
