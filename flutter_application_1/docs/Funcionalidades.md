@@ -1,7 +1,7 @@
 # FUNCIONALIDADES BÁSICAS 
 
 <!-- Código para por imagens dentro da documentação  -->
-![Diagrama Caso de Uso](/SERVIÇO.png)
+![Diagrama Caso de Uso](flutter_application_1/docs/SERVIÇO.png)
 ![Diagrama Conceitual](/Conceitual.png)
 
 **Registro de Usuário**
